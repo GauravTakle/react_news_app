@@ -10,13 +10,14 @@ import {
 } from "react-router-dom";
 
 export default class App extends Component {
+  pageSize = 15;
   render() {
     return (
       <div >
         <Router>
         <Navbar/>
           <Switch>
-              <Route exact path="/"><News key="general" pageSize={6} category="general"/></Route>
+              <Route exact path="/"><News key="general" pageSize={this.pageSize} category="general"/></Route>
               <Route exact path="/business"><News key="business" pageSize={6} category="business"/></Route>
               <Route exact path="/entertainment"><News key="entertainment" pageSize={6} category="entertainment"/></Route>
               <Route exact path="/health"><News key="health" pageSize={6} category="health"/></Route>
